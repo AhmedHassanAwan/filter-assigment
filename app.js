@@ -227,40 +227,28 @@ const products = [
 ];
 
 
-
-
 const div = document.querySelector("#container")
 
-products.map((item) =>{
-     div.innerHTML +=`
-    <div id="card">
-    <h3>Name : ${item.name}</h3>
-    <h3>Price : ${item.price}</h3>
-    <h3>category : ${item.category}</h3>
-</div>
-`
- 
+function button(btn) {
+    div.innerHTML =``
+    console.log(btn.innerHTML)
 
+
+
+const filter =  products.filter((item) =>{
+    return btn.innerHTML === item.category
+    console.log(filter)
 })
 
 
-function button(button) {
-    console.log(button.innerHTML);
+
+filter.map((item) =>{
+    div.innerHTML += `
+      <div id="card">
+            <h2>Name : ${item.name}</h2>
+            <h2>Price : ${item.price}</h2>
+            <h2>category : ${item.category}</h2>
+        
+        </div>`
+})
 }
-
-
-
-
-// console.log(item.category)
-
-
-
-
-
-// document.getElementById('myButton').addEventListener('click', function() {
-//     console.log(this); // 'this' refers to the clicked button
-// });
-
-
-
-
